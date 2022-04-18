@@ -1,9 +1,12 @@
 import './styles.css'
+import Navbar from './Navbar'
 
 
 function Inicio() {
   return (
-    <h1>Inicio</h1>
+    <div id='main'>
+      <Navbar/>
+      </div>
   );
 }
 
