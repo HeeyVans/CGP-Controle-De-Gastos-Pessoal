@@ -29,7 +29,7 @@ function Navbar(){
                 <li><a href='#'>Inicio</a></li>
                 <li><a href='#'>Sobre</a></li>
                 <li><a href='#'>Contato</a></li>
-                <li><a href='#'>Login</a></li>
+                <li><a href='../login/Login.js'>Login</a></li>
            </ul>
        </nav>
 
