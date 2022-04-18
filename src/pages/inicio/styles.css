@@ -1,3 +1,6 @@
+
+/* @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Space+Mono&display=swap'); */
+
 body{
     margin:0px;
     padding: 0px;
@@ -32,6 +35,14 @@ input{
     position: relative;
     background-repeat: no-repeat;
     background-size: cover;
+}
+
+.img-inicio{
+    position: absolute;
+    width: 100%;
+    margin-left: 1000px;
+    margin-top: 150px;
+
 }
 
 nav{
@@ -101,7 +112,8 @@ nav .menu-btn,
 }
 .name .details{
     color: #969696;
-    margin-top: 5px;
+    margin-top: 13px;
+    font-size: 20px;
 }
 
 .name h1{
@@ -151,6 +163,7 @@ nav .menu-btn,
     margin-top: 60px;
     margin-bottom: -80px;
 }
+
  /* #about{
     margin-top:100px ;
 	width:100%;
