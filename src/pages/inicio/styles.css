@@ -89,7 +89,7 @@ nav .menu-btn,
 		display:none;
 	}
 .name{
-	font-family: 'Montserrat';
+	font-family: 'Montserrat', sans-serif;
 	width: 500px;
 	position: absolute;
     left: 22%;
@@ -101,11 +101,13 @@ nav .menu-btn,
 }
 .name .details{
     color: #969696;
+    margin-top: 5px;
 }
+
 .name h1{
-	font-family:'Montserrat';
-	font-size: 40px;
-	margin:0px;
+	font-family:'Montserrat', sans-serif;
+	font-size: 60px;
+	margin: 0px;
 	letter-spacing: 2px;
 	color:#000000;
 }
@@ -114,7 +116,7 @@ nav .menu-btn,
     margin-top: 40px;
 }
 .cv-btn{
-	width:130px;
+	width:180px;
 	height: 45px;
 	display: flex;
 	justify-content: center;
@@ -122,6 +124,8 @@ nav .menu-btn,
     background-color: #3DD990;
     border-radius: 45px;
 	color:#ffffff;
+    margin-top: 40px;
+    font-size: 20px;
 }
 .cv-btn:hover{
 	background-color: #3DD990;
@@ -406,7 +410,7 @@ font-size: 2rem;
     background-color:#0099ff;
 }
 */
-@media(max-width:1190px){
+/*@media(max-width:1190px){
 	#main{
 		background-size: 1150px !important;
 		
@@ -583,3 +587,4 @@ font-size: 2rem;
                 height:400px;
             }
         }
+        */
