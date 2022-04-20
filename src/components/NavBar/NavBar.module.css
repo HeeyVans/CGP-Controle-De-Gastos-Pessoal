@@ -1,0 +1,14 @@
+.logoNavBar {
+    justify-content: flex-start
+}
+
+.navbar {
+    background: #3DD990;
+    width: 100%;
+    height: 105px;
+}
+
+.menuEsq {
+    display: inline;
+    float: left;
+}
