@@ -5,7 +5,7 @@ import LandingPage from './pages/landing-page/landing-page';
 import Login from './pages/login/Login';
 import Cadastro from './pages/cadastro/Cadastro';
 
-import Inicio from './pages/inicio/inicio';
+import Inicio from './pages/inicio/Inicio'
 import Relatorios from './pages/relatorios/relatorios';
 import Ajustes from './pages/ajustes/ajustes';
 

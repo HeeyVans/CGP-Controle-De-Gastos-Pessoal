@@ -99,6 +99,27 @@ nav .menu-btn,
 .menu-icon{
 		display:none;
 	}
+
+
+.informacoes h3{
+    font-family: 'Montserrat', sans-serif;
+    width: 500px;
+    position: absolute;
+    left: 700px;
+    top: 700px;
+    align-items: center;
+    text-align: center;
+}
+
+.informacoes p{
+    font-family: 'Montserrat', sans-serif;
+    position: absolute;
+    left: 550px;
+    top: 750px;
+    align-items: center;
+    text-align: center;
+}
+
 .name{
 	font-family: 'Montserrat', sans-serif;
 	width: 500px;
@@ -423,7 +444,7 @@ font-size: 2rem;
     background-color:#0099ff;
 }
 */
-/*@media(max-width:1190px){
+@media(max-width:1190px){
 	#main{
 		background-size: 1150px !important;
 		
@@ -600,4 +621,4 @@ font-size: 2rem;
                 height:400px;
             }
         }
-        */
+       

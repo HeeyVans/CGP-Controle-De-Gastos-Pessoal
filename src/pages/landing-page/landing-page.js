@@ -17,6 +17,13 @@ function LandingPage() {
         <div className='image'>
           <span className="img-inicio"><img src={img} alt="imagem"></img> </span> 
         </div>
+
+        <div className='informacoes'>
+          <h3><span>Veja alguns de nossos recursos:</span></h3>
+          <p className='details-footer'>Cartões de Crédito • Controle de Gasto Mensal • Notificação de Vencimento de Fatura • Gasto Distribuido por Categoria</p>
+
+      </div>
+
       </div>
   );
 }
