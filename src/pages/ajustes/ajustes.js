@@ -1,7 +1,7 @@
 import React from "react";
 import NavBar from '../../components/NavBar/NavBar'
 
-const Inicio = () => {
+const Ajustes = () => {
     return (
         <div style={{
             display: 'flex',
@@ -10,9 +10,9 @@ const Inicio = () => {
             height: '90vh'
         }}>
             <NavBar />
-            <h1>Início</h1>
+            <h1>Ajustes</h1>
         </div>
     );
 };
 
-export default Inicio;
+export default Ajustes;
