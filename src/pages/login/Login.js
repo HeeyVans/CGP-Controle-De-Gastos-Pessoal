@@ -41,7 +41,7 @@ const [senha, setSenha] = useState("")
 
             <div className="text-login">
               <span className="txt-conta">Ainda não possui conta? </span>
-              <a className="txt2" href="../cadastro/Cadastro.js">Faça o cadastro</a>
+              <a className="txt2" href="../cadastro">Faça o cadastro</a>
             </div>
 
           </form>

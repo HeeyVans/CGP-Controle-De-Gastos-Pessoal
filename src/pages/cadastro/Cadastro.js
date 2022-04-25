@@ -63,7 +63,7 @@ function Cadastro() {
     
                 <div className="text-cadastro">
                   <span className="txt-cadastro">Já sou cadastrado. </span>
-                  <a className="txt2" href="../login/Login.js">Quero fazer login!</a>
+                  <a className="txt2" href="../login">Quero fazer login!</a>
                 </div>
     
               </form>

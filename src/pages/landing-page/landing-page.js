@@ -11,7 +11,7 @@ function LandingPage() {
             <h1><span>Controle seu gasto pessoal online</span></h1>
             <p className='details'>Encontre aqui a melhor forma de você organizar seu dinheiro, totalmente grátis e prático de usar!
             </p>
-            <a href='../cadastro/Cadastro.js' className='cv-btn'>Cadastra-se já!</a>
+            <a href='../cadastro' className='cv-btn'>Cadastra-se já!</a>
         </div>
 
         <div className='image'>

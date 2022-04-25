@@ -11,7 +11,7 @@ const Inicio = () => {
         }}>
             <NavBar />
             <h1>Início</h1>
-            <h1> DEUS NOS AJUDE!!!!</h1>
+            <h1><br/><br/> DEUS NOS AJUDE!!!!</h1>
         </div>
     );
 };
