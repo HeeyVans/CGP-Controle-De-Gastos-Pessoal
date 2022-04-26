@@ -10,17 +10,17 @@ import btnNotificacoes from '../../assets/imagens/btnNotificacoes.png';
 import btnPerfil from '../../assets/imagens/btnPerfil.png';
 
 //Estilos
-import styles from './NavBar.module.css'
+import './NavBar.css';
 
 const NavBar = () => {
     return (
-        <nav class={styles.navbar}>
+        <nav className={'navbar'}>
             <div>
                 <Link to="/">
                     <img src={logo} alt="logo" />
                 </Link>
             </div>
-            <ul>
+            <ul className="menuCentral">
                 <li>
                     <img src={btnInicio} alt="Notificações" width='50px' height='50px' />
                     <Link to="/inicio"> Início </Link>
@@ -34,14 +34,14 @@ const NavBar = () => {
                     <Link to="/ajustes"> Ajustes </Link>
                 </li>
             </ul>
-            <div class={styles.menuEsq}>
-                <Link to="/#">
+            <ul className={'menuEsq'}>
+                <li to="/#">
                     <img src={btnNotificacoes} alt="Notificações" width='50px' height='50px' />
-                </Link>
-                <Link to="/#">
+                </li>
+                <li to="/#">
                     <img src={btnPerfil} alt="Notificações" width='50px' height='50px' />
-                </Link>
-            </div>
+                </li>
+            </ul>
         </nav>
     );
 }

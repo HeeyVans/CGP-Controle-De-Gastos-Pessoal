@@ -1,0 +1,51 @@
+.navbar {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	position: static;
+	left: 0;
+	top: 0;
+	width:100%;
+	z-index: 1;
+    background-color: transparent;
+    transition: 0.6s ease-in-out;
+	padding: 0 10px;
+	background: #3DD990;
+    height: 105px;
+}
+
+.navbar div:first-child {
+	width: 150px;
+}
+
+.navbar div:first-child a,
+.navbar div:first-child a img {
+	width: 100%;
+}
+
+.menuCentral li {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	padding: 5px;
+	margin: 0;
+}
+
+.menuCentral li:nth-child(2) img {
+	transform: scale(1.3);
+}
+
+.navbar .menuEsq {
+	width: 150px;
+	justify-content: right;
+}
+
+.navbar .menuEsq li:first-child {
+	margin-right: 15px;
+}
+
+.container {
+	margin-right: 20px;
+	margin-left: 20px;
+    width: 100%;
+}

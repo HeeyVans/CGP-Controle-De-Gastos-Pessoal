@@ -3,14 +3,11 @@ import NavBar from '../../components/NavBar/NavBar'
 
 const Ajustes = () => {
     return (
-        <div style={{
-            display: 'flex',
-            justifyContent: 'center',
-            alignItems: 'center',
-            height: '90vh'
-        }}>
+        <div>
             <NavBar />
-            <h1>Ajustes</h1>
+            <div className="container">
+                <h1>Ajustes</h1>
+            </div>
         </div>
     );
 };

@@ -3,15 +3,13 @@ import NavBar from '../../components/NavBar/NavBar'
 
 const Inicio = () => {
     return (
-        <div style={{
-            display: 'flex',
-            justifyContent: 'center',
-            alignItems: 'center',
-            height: '90vh'
-        }}>
+        <div>
             <NavBar />
-            <h1>Início</h1>
-            <h1><br/><br/> DEUS NOS AJUDE!!!!</h1>
+            
+            <div className="container">
+                <h1>Olá, Mother of the Dragons!</h1>
+            </div>
+            
         </div>
     );
 };
