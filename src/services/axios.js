@@ -2,6 +2,7 @@ import axios from "axios";
 
 export const api = axios.create({
   baseURL: "http://localhost:4044/cgp",
+  timeout: 400,
 });
 
 export const doingLogin = async (email, password) => {

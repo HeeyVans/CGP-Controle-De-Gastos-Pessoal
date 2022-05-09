@@ -1,0 +1,159 @@
+
+.container-inicio {
+    margin : 70px;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 80px 300px 180px; 
+    border-style: solid;
+    border-width: 1.5px;
+    border-radius: 5px;
+
+}
+
+
+.container-inicio .SalarioMensal {
+    background-color: #F1F1F1;
+    grid-column-start: 1;
+    grid-column-end: 2;
+    border-style: solid;
+    border-top-width: 0px;
+    border-left-width: 0px;
+    border-right-width: 1px;
+    border-bottom-width: 1px; 
+    padding: 10px;
+}
+
+.container-inicio .SalarioMensal h2 {
+    color : black;
+}
+
+.container-inicio .SalarioMensal p {
+    color : green;
+    font-size: 30px;
+    font-weight: bold;
+}
+
+
+.container-inicio .DespesaMensal {
+    background-color: #F1F1F1;
+    grid-column-start: 2;
+    grid-column-end: 3;
+    border-style: solid;
+    border-top-width: 0px;
+    border-left-width: 0px;
+    border-right-width: 1px;
+    border-bottom-width: 1px;
+    padding: 10px;
+}
+
+.container-inicio .DespesaMensal h2 {
+    color : black;
+}
+
+.container-inicio .DespesaMensal p {
+    color : red;
+    font-size: 30px;
+    font-weight: bold;
+}
+
+.container-inicio .SaldoTotal {
+    background-color: #F1F1F1;
+    grid-column-start: 3;
+    grid-column-end: 4;
+    border-style: solid;
+    border-top-width: 0px;
+    border-left-width: 0px;
+    border-right-width: 1px;
+    border-bottom-width: 1px;
+    padding: 10px;
+}
+
+.container-inicio .SaldoTotal h2 {
+    color : black;
+}
+
+.container-inicio .SaldoTotal p {
+    color : black;
+    font-size: 30px;
+    font-weight: bold;
+}
+
+::-webkit-scrollbar{
+    display: none;
+}
+.container-inicio .Categorias {
+    background-color: #F1F1F1;
+    grid-column-start: 1;
+    grid-column-end: 3;
+    border-style: solid;
+    border-top-width: 0px;
+    border-left-width: 0px;
+    border-right-width: 1px;
+    border-bottom-width: 1px;
+    overflow-y: auto;
+
+}
+
+.container-inicio .Resumo {
+    background-color: #F1F1F1;
+    grid-column-start: 3;
+    grid-column-end: 4;
+    border-style: solid;
+    border-top-width: 0px;
+    border-left-width: 0px;
+    border-right-width: 0px;
+    border-bottom-width: 1px;
+    padding: 10px;
+}
+
+.container-inicio .Resumo h2 {
+    color: black;
+    
+    
+}
+
+.container-inicio .Cartoes {
+    background-color: #F1F1F1;
+    grid-column-start: 1;
+    grid-column-end: 4;
+    border-style: solid;
+    border-top-width: 0px;
+    border-left-width: 0px;
+    border-right-width: 1px;
+    border-bottom-width: 1px;
+    padding: 10px;
+    overflow: auto;
+    white-space: nowrap;
+
+}
+
+.container-inicio .Cartoes h2 {
+    position: absolute;
+}
+
+.container-inicio .Cartoes ul li  {
+    display: inline-block;
+    margin: 70px;  
+
+}
+
+
+.Categorias ul li {
+    border-style: solid;
+    border-top-width: 0px;
+    border-left-width: 0px;
+    border-right-width: 0px;
+    border-bottom-width: 1px;
+    padding: 8px;
+    height: 52px;
+}
+
+.Categorias ul li h2 {
+    color:black;
+    font-size: 18px;
+}
+
+.Categorias ul li p {
+    color:black;
+    font-size: 14px;
+}
