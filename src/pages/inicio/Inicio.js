@@ -1,65 +1,54 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import NavBar from "../../components/NavBar/NavBar";
+import { api, getUser } from "../../services/axios.js";
 import "./inicio.css";
 
 const Inicio = () => {
+  const [userData, setUserData] = useState({});
+
+  useEffect(() => {
+    (async () => {
+      try {
+        api.defaults.headers.common["authorization"] = `Beers ${JSON.parse(
+          localStorage.getItem("token")
+        )}`;
+        const response = await getUser();
+        setUserData(response.data);
+        console.log(response.data);
+      } catch (error) {
+        alert(error);
+      }
+    })();
+  }, []);
+
   return (
     <div>
       <NavBar />
-
+      <h1>Ola, Seja Bem-Vindo {userData.nome}</h1>
       <div className="container-inicio">
         <div className="SalarioMensal">
           <h2>Salario Mensal</h2>
-          <p>R$ 300</p>
+          <p>R$ {userData.saldo_mensal}</p>
         </div>
         <div className="DespesaMensal">
           <h2>Despesa Mensal</h2>
-          <p>R$ 300</p>
+          <p>R$ {userData.saldo_mensal - userData.saldo_resto}</p>
         </div>
-        <div className="SaldoTotal">
-          <h2>Saldo Total</h2>
-          <p>R$ 300</p>
+        <div className="SaldoResto">
+          <h2>Saldo Restante</h2>
+          <p>R$ {userData.saldo_resto}</p>
         </div>
 
         <div className="Categorias">
           <ul>
-            <li>
-              <h2>Casa</h2>
-              <p>Gasto autal : R$ 12,00</p>
-            </li>
-            <li>
-              <h2>Casa</h2>
-              <p>Gasto autal : R$ 12,00</p>
-            </li>
-            <li>
-              <h2>Casa</h2>
-              <p>Gasto autal : R$ 12,00</p>
-            </li>
-            <li>
-              <h2>Casa</h2>
-              <p>Gasto autal : R$ 12,00</p>
-            </li>
-            <li>
-              <h2>Casa</h2>
-              <p>Gasto autal : R$ 12,00</p>
-            </li>
-            <li>
-              <h2>Casa</h2>
-              <p>Gasto autal : R$ 12,00</p>
-            </li>
-
-            <li>
-              <h2>Casa</h2>
-              <p>Gasto autal : R$ 12,00</p>
-            </li>
-            <li>
-              <h2>Casa</h2>
-              <p>Gasto autal : R$ 12,00</p>
-            </li>
-            <li>
-              <h2>Casa</h2>
-              <p>Gasto autal : R$ 12,00</p>
-            </li>
+            {userData.Categorias.map((value) => {
+              return (
+                <li>
+                  <h2>{value.nome}</h2>
+                  <p>Gasto Atual: {value.valor_atual}</p>
+                </li>
+              );
+            })}
           </ul>
         </div>
         <div className="Resumo">

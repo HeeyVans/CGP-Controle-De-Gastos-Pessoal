@@ -56,7 +56,7 @@
     font-weight: bold;
 }
 
-.container-inicio .SaldoTotal {
+.container-inicio .SaldoResto {
     background-color: #F1F1F1;
     grid-column-start: 3;
     grid-column-end: 4;
@@ -68,11 +68,11 @@
     padding: 10px;
 }
 
-.container-inicio .SaldoTotal h2 {
+.container-inicio .SaldoResto h2 {
     color : black;
 }
 
-.container-inicio .SaldoTotal p {
+.container-inicio .SaldoResto p {
     color : black;
     font-size: 30px;
     font-weight: bold;

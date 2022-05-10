@@ -14,3 +14,7 @@ export const createUser = async (nome, senha, data, email) => {
   const dat_nasc = data;
   return api.post("/users", { email, nome, password, dat_nasc });
 };
+
+export const getUser = async () => {
+  return api.get("/users");
+};
