@@ -2,6 +2,16 @@ import React, { useState, useEffect } from "react";
 import NavBar from "../../components/NavBar/NavBar";
 import { api, getUser } from "../../services/axios.js";
 import "./inicio.css";
+import { Chart } from "react-google-charts";
+
+export const data = [
+  ["Gastos", "Gastos Mensais"],
+  ["Transporte", 11],
+  ["Educação", 2],
+  ["Lazer", 2],
+  ["Serviços", 2],
+  ["Restaurante", 7],
+];
 
 const Inicio = () => {
   const [userData, setUserData] = useState({});
@@ -24,7 +34,7 @@ const Inicio = () => {
   return (
     <div>
       <NavBar />
-      <h1>Ola, Seja Bem-Vindo {userData.nome}</h1>
+      <h1>Olá, Seja Bem-Vindo {userData.nome}</h1>
       <div className="container-inicio">
         <div className="SalarioMensal">
           <h2>Salario Mensal</h2>
@@ -41,40 +51,39 @@ const Inicio = () => {
 
         <div className="Categorias">
           <ul>
-            {userData.Categorias.map((value) => {
+            {/*  {userData.Categorias.map((value) => {
               return (
                 <li>
                   <h2>{value.nome}</h2>
                   <p>Gasto Atual: {value.valor_atual}</p>
                 </li>
               );
-            })}
+            })} */}
           </ul>
         </div>
+
         <div className="Resumo">
           <h2>Resumo de Gastos</h2>
+          <Chart
+            chartType="PieChart"
+            data={data}
+            width={"100%"}
+            height={"250px"}
+          />
         </div>
+
         <div className="Cartoes">
           <h2>Cartões</h2>
           <ul>
-            <li>Casa</li>
-            <li>Casa</li>
-            <li>Casa</li>
-            <li>Casa</li>
-            <li>Casa</li>
-            <li>Casa</li>
-            <li>Casa</li>
-            <li>Casa</li>
-            <li>Casa</li>
-            <li>Casa</li>
-            <li>Casa</li>
-            <li>Casa</li>
-            <li>Casa</li>
-            <li>Casa</li>
-            <li>Casa</li>
-            <li>Casa</li>
-            <li>Casa</li>
-            <li>Casa</li>
+            <li>Inter</li>
+            <li>Santander</li>
+            <li>Banco do Brasil</li>
+            <li>Bradesco</li>
+            <li>Nubank</li>
+            <li>Neon</li>
+            <li>Itáu</li>
+            <li>Next</li>
+            <li>C6</li>
           </ul>
         </div>
       </div>
