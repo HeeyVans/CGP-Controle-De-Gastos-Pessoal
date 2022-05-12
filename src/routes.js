@@ -51,9 +51,9 @@ export default function Router() {
           <Route
             path="/ajustes"
             element={
-              <Private>
+              //<Private>
                 <Ajustes />
-              </Private>
+              //</Private>
             }
           />
         </Routes>
