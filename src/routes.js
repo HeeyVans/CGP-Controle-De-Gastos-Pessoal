@@ -9,6 +9,8 @@ import Relatorios from "./pages/relatorios/relatorios";
 import Ajustes from "./pages/ajustes/ajustes";
 
 import { AuthContext, AuthProvider } from "./contexts/auth";
+import Cartao from "./pages/cartao/cartao";
+import Categoria from "./pages/categorias/categorias";
 
 export default function Router() {
   const Private = ({ children }) => {
@@ -37,6 +39,22 @@ export default function Router() {
             element={
               <Private>
                 <Inicio />
+              </Private>
+            }
+          />
+          <Route
+            path="/cartao"
+            element={
+              <Private>
+                <Cartao />
+              </Private>
+            }
+          />
+          <Route
+            path="/categoria"
+            element={
+              <Private>
+                <Categoria />
               </Private>
             }
           />

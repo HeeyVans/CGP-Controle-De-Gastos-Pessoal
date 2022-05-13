@@ -3,13 +3,39 @@
     margin : 70px;
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
-    grid-template-rows: 80px 300px 180px; 
+    grid-template-rows: 80px 300px 210px; 
     border-style: solid;
     border-width: 1.5px;
     border-radius: 5px;
 
 }
 
+.container-categorias {
+    margin : 70px;
+    display: grid;
+    grid-template-columns: 1fr 1fr ;
+    grid-template-rows: 200px 600px ; 
+    border-style: solid;
+    border-width: 1.5px;
+    border-radius: 5px;
+}
+
+.container-categorias .form {
+
+    grid-column-start: 1;
+    grid-column-end: 3;
+    height: auto;
+    
+    
+}
+
+.container-categorias .table {
+
+    grid-column-start: 1;
+    grid-column-end: 3;
+    overflow-y: auto;
+    
+}
 
 .container-inicio .SalarioMensal {
     background-color: #F1F1F1;
@@ -133,7 +159,13 @@
 
 .container-inicio .Cartoes ul li  {
     display: inline-block;
-    margin: 70px;  
+    margin: 50px;  
+    padding: 30px;
+    border-style: solid;
+    border-width: 2px;
+    color : black;
+    font-weight: 800;
+    
 
 }
 
@@ -156,4 +188,48 @@
 .Categorias ul li p {
     color:black;
     font-size: 14px;
+}
+
+li:hover {
+    font-size: 22px ;
+    background-color: #F9F9F9;
+}
+
+.newCategoria {
+    margin-right: 10px;
+vertical-align: middle;
+    width: 19px;
+    height: 19px;
+
+}
+
+.newCartao {
+    width: 18px;
+    height: 18px;
+}
+
+.newCartao:hover {
+    width: 23px;
+    height: 23px;
+}
+
+table {
+    border-style: solid;
+    border-width: 2px;
+    padding: 5px;
+}
+
+th {
+   padding-bottom: 9px; 
+    text-align: center;
+}
+
+tr {
+    border-style: solid;
+}
+
+td {
+    padding-bottom: 9px;
+    padding-right: 15px;
+    text-align: center;
 }

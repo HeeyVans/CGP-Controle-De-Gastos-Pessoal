@@ -1,0 +1,272 @@
+.container h1{
+    position: absolute;
+    width: 550px;
+    height: 65px;
+    left: 160px;
+    top: 138px;
+    
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    font-size: 54px;
+    line-height: 0px;
+    /* or 0% */
+    
+    display: flex;
+    align-items: center;
+    
+    color: #292930;
+}
+
+.container-opcoes{
+    box-sizing: border-box;
+
+    position: absolute;
+    width: 265px;
+    height: 130px;
+    left: 150px;
+    top: 213px;
+
+    background: #FAFAFA;
+    border: 1px solid #C4C4C4;
+    border-radius: 25px;
+}
+
+.container-opcoes h2{
+    margin-bottom: 8px;
+    margin-top: 15px;
+    margin-left: 5px;
+    border-style: solid;
+    border-top-width: 0px;
+    border-left-width: 0px;
+    border-right-width: 0px;
+    border-bottom-width: 1px;
+    padding: 6px;
+}
+
+.container-opcoes .op-sair{
+    color:#FA6868;
+}
+
+.op-sair h2{
+    border-bottom-width: 0px;
+}
+
+.container-conta{
+    box-sizing: border-box;
+
+    position: absolute;
+    width: 835px;
+    height: 730px;
+    left: 600px;
+    top: 213px;
+
+    background: #FAFAFA;
+    border: 1px solid #C4C4C4;
+    border-radius: 25px;
+    
+}
+
+.container-conta h2{
+    position: absolute;
+    width: 275px;
+    height: 40px;
+    left: 30px;
+    top: 15px;
+
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 600;
+    font-size: 40px;
+    line-height: 0px;
+    /* or 0% */
+
+    display: flex;
+    align-items: center;
+
+    color: #292930;
+
+}
+
+.container-conta h3{
+    position: absolute;
+    width: 275px;
+    height: 40px;
+    left: 30px;
+    top: 100px;
+
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 600;
+    font-size: 28px;
+    line-height: 0px;
+    /* or 0% */
+
+    display: flex;
+    align-items: center;
+
+    color: #292930;
+
+}
+
+.wrap-input-nome{
+    position: relative;
+    border-bottom: 2px solid #adadad;
+    margin-bottom: 35px;
+    width: 450px;
+    /* height: 14px; */
+    left: 30px;
+    top: 170px;
+}
+
+.wrap-input-email{
+    position: relative;
+    border-bottom: 2px solid #adadad;
+    margin-bottom: 35px;
+    width: 450px;
+    /* height: 14px; */
+    left: 30px;
+    top: 180px;
+}
+.wrap-input-salario{
+    position: relative;
+    border-bottom: 2px solid #adadad;
+    margin-bottom: 35px;
+    width: 450px;
+    /* height: 14px; */
+    left: 30px;
+    top: 210px;
+}
+
+.wrap-input-telefone{
+    position: relative;
+    border-bottom: 2px solid #adadad;
+    margin-bottom: 35px;
+    width: 450px;
+    /* height: 14px; */
+    left: 30px;
+    top: 190px;
+}
+
+.wrap-input-apelido{
+    position: relative;
+    border-bottom: 2px solid #adadad;
+    margin-bottom: 35px;
+    width: 450px;
+    /* height: 14px; */
+    left: 30px;
+    top: 200px;
+}
+
+.input{
+    font-size: 15px;
+    color: #000;
+    line-height: 1.2;
+    border: none;
+    display: block;
+
+    width: 100%;
+    height: 45px;
+
+    background-color: transparent;
+
+    padding: 0 5px;
+}
+
+.focus-input{
+    position: absolute;
+    display: block;
+    width: 100%;
+    height: 100%;
+    
+    top: 0;
+    left: 0;
+
+    pointer-events: none;
+    color:#adadad;
+}
+
+.focus-input::before{
+    content: "";
+    display: block;
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 0;
+    height: 2px;
+
+    -webkit-transition: all 0.4s;
+    -o-transition: all 0.4s;
+    -moz-transition: all 0.4s;
+
+    background: -webkit-linear-gradient(to left, #F2F2F2, #3DD990);
+    background: -o-linear-gradient(to left, #F2F2F2, #3DD990);
+    background: -moz-linear-gradient(to left, #F2F2F2, #3DD990);
+    background: linear-gradient(to left, #F2F2F2, #3DD990);
+    
+}
+
+.focus-input::after{
+    font-size: 15px;
+    color: #999;
+    line-height: 1.2;
+
+    content: attr(data-placeholder);
+
+    display: block;
+    width: 100%;
+    position: absolute;
+    top: 16px;
+    left: 0px;
+
+    padding-left: 5px;
+
+    -webkit-transition: all 0.4s;
+    -o-transition: all 0.4s;
+    -moz-transition: all 0.4s;
+}
+
+.input:focus{
+    outline: 0;
+}
+
+.input:focus + .focus-input::after{
+    top: -10px;
+}
+
+.input:focus + .focus-input::before{
+    width: 100%;
+}
+
+.has-val +.focus-input::after{
+    top: -15px;
+}
+
+.has-val +.focus-input::before{
+   width: 100%;
+}
+
+
+button{
+    border-radius: 36px;
+    font-family: 'Montserrat';
+    font-style: normal;
+    width: 215px;
+    height: 43px;
+    font-size: 20px;
+    text-align: center;
+    font-weight: 700;
+    margin: 0 15px;
+}
+
+.mudancas-form-btn{
+    background: #3DD990;
+    color: rgba(0, 0, 0, 0.5);
+}
+
+.cancelar-form-btn{
+    background: #FA6868;
+    color: rgba(0, 0, 0, 0.5);
+} 
+
+.container-form-btn{
+    margin-top: 300px;
+    margin-left: 170px;
+}
