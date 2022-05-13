@@ -4,7 +4,20 @@ import { api, getUser } from "../../services/axios.js";
 import { Chart } from "react-google-charts";
 import { useNavigate } from "react-router-dom";
 import "./inicio.css";
+<<<<<<< HEAD
 import btnNew from "../../assets/imagens/new3.png";
+=======
+import { Chart } from "react-google-charts";
+
+export const data = [
+  ["Gastos", "Gastos Mensais"],
+  ["Transporte", 11],
+  ["Educação", 2],
+  ["Lazer", 2],
+  ["Serviços", 2],
+  ["Restaurante", 7],
+];
+>>>>>>> 8a5a4d8f7d0675ab731fd4811ea8d6321eebbfe4
 
 const Inicio = () => {
   const [userData, setUserData] = useState({ Cartoes: [], Categorias: [] });
@@ -73,11 +86,15 @@ const Inicio = () => {
   return (
     <div>
       <NavBar />
+<<<<<<< HEAD
       <h1>Ola, Seja Bem-Vindo {userData.nome}</h1>
       {userData.failed && (
         <p>Erro na Requisição , Atualize a Pagina Para Tentar Novamente</p>
       )}
 
+=======
+      <h1>Olá, Seja Bem-Vindo {userData.nome}</h1>
+>>>>>>> 8a5a4d8f7d0675ab731fd4811ea8d6321eebbfe4
       <div className="container-inicio">
         <div className="SalarioMensal">
           <h2>Salario Mensal</h2>
@@ -99,6 +116,7 @@ const Inicio = () => {
 
         <div className="Categorias">
           <ul>
+<<<<<<< HEAD
             <li onClick={() => onClickCategoria(false, true)}>
               <img className="newCategoria" src={btnNew} alt="Nova Categoria" />
               Novo
@@ -113,9 +131,21 @@ const Inicio = () => {
                 <p>Gasto Atual : {value.valor_atual}</p>
               </li>
             ))}
+=======
+            {/*  {userData.Categorias.map((value) => {
+              return (
+                <li>
+                  <h2>{value.nome}</h2>
+                  <p>Gasto Atual: {value.valor_atual}</p>
+                </li>
+              );
+            })} */}
+>>>>>>> 8a5a4d8f7d0675ab731fd4811ea8d6321eebbfe4
           </ul>
         </div>
+
         <div className="Resumo">
+<<<<<<< HEAD
           <h2>Distribuição de Categorias</h2>
           {!userData.failed && (
             <Chart
@@ -125,7 +155,17 @@ const Inicio = () => {
               height={"250px"}
             />
           )}
+=======
+          <h2>Resumo de Gastos</h2>
+          <Chart
+            chartType="PieChart"
+            data={data}
+            width={"100%"}
+            height={"250px"}
+          />
+>>>>>>> 8a5a4d8f7d0675ab731fd4811ea8d6321eebbfe4
         </div>
+
         <div className="Cartoes">
           <h2>
             Cartões{" "}
@@ -138,6 +178,7 @@ const Inicio = () => {
           </h2>
 
           <ul>
+<<<<<<< HEAD
             {userData.Cartoes.map((value, index) => (
               <li
                 key={index}
@@ -147,6 +188,17 @@ const Inicio = () => {
                 {value.nome}
               </li>
             ))}
+=======
+            <li>Inter</li>
+            <li>Santander</li>
+            <li>Banco do Brasil</li>
+            <li>Bradesco</li>
+            <li>Nubank</li>
+            <li>Neon</li>
+            <li>Itáu</li>
+            <li>Next</li>
+            <li>C6</li>
+>>>>>>> 8a5a4d8f7d0675ab731fd4811ea8d6321eebbfe4
           </ul>
         </div>
       </div>

@@ -37,9 +37,9 @@ export default function Router() {
           <Route
             path="/inicio"
             element={
-              <Private>
+             // <Private>
                 <Inicio />
-              </Private>
+              // </Private>
             }
           />
           <Route

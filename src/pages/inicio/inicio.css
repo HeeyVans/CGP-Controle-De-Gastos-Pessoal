@@ -138,6 +138,10 @@
     
 }
 
+.container-inicio .Resumo rect{
+    fill: #F1F1F1;
+}
+
 .container-inicio .Cartoes {
     background-color: #F1F1F1;
     grid-column-start: 1;
