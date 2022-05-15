@@ -70,6 +70,17 @@ const Inicio = () => {
       navigate(`/cartao`, { state: { cartao: cartao } }); //true é para criar , false estára dando um update
     }
   };
+
+  const onClickGasto = (categoria) => {
+    navigate("/gasto", {
+      state: {
+        categoria: {
+          id: categoria.id,
+          tipo: categoria.tipo,
+        },
+      },
+    });
+  };
   return (
     <div>
       <NavBar />
@@ -104,12 +115,17 @@ const Inicio = () => {
               Novo
             </li>
             {userData.Categorias.map((value, index) => (
-              <li
-                key={index}
-                onClick={() => onClickCategoria(value, false)}
-                categoria={value}
-              >
-                {value.nome}
+              <li key={index} categoria={value}>
+                <img
+                  className="newGasto"
+                  src={btnNew}
+                  alt="Novo Gasto"
+                  onClick={() => onClickGasto(value)}
+                />
+
+                <h2 onClick={() => onClickCategoria(value, false)}>
+                  {value.nome}
+                </h2>
                 <p>Gasto Atual : {value.valor_atual}</p>
               </li>
             ))}

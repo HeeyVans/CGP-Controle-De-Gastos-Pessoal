@@ -118,102 +118,90 @@ const Cartao = () => {
 
       <h1>Categoria : {categoria.nome}</h1>
       <p></p>
-      <div className="container-categorias" style={{ padding: 30 }}>
-        <div className="form">
-          <form onSubmit={handleSubmit} style={{ width: "100vw" }}>
-            <label style={{ display: "inline-block", marginRight: 30 }}>
-              Nome:
+      <div className="container-categoria" style={{ padding: 30 }}>
+        <div className="formcategoria">
+          <form onSubmit={handleSubmit}>
+            <div className="wrap-input-nome">
               <input
-                style={{
-                  border: "solid",
-                  borderWidth: 1,
-                  marginBottom: 20,
-                }}
-                className={"input"}
-                type="text"
+                className={categoria.nome !== "" ? "has-val input" : "input"}
+                type="nome"
                 value={categoria.nome}
                 onChange={onChange}
                 name="nome"
               />
-            </label>
-
-            <label style={{ display: "inline-block", marginRight: 30 }}>
-              Valor Planejado:
+              <span className="focus-input" data-placeholder="Valor"></span>
+            </div>
+            <div className="wrap-input-nome">
               <input
-                style={{
-                  border: "solid",
-                  borderWidth: 1,
-                  marginBottom: 20,
-                }}
-                className={"input"}
-                type="text"
+                className={
+                  categoria.valor_planejado !== "" ? "has-val input" : "input"
+                }
+                type="valor_planejado"
                 value={categoria.valor_planejado}
                 onChange={onChange}
                 name="valor_planejado"
               />
-            </label>
-
-            <label style={{ display: "inline-block", marginRight: 30 }}>
-              Valor Atual:
+              <span
+                className="focus-input"
+                data-placeholder="Valor Planejado"
+              ></span>
+            </div>
+            <div className="wrap-input-nome">
               <input
-                style={{
-                  border: "solid",
-                  borderWidth: 1,
-                  marginBottom: 20,
-                }}
-                className={"input"}
-                type="text"
+                className={
+                  categoria.valor_atual !== "" ? "has-val input" : "input"
+                }
+                type="valor_atual"
                 value={categoria.valor_atual}
                 onChange={onChange}
                 name="valor_atual"
-                disabled={true}
               />
-            </label>
+              <span
+                className="focus-input"
+                data-placeholder="Valor Atual"
+              ></span>
+            </div>
 
-            <label style={{ display: "inline-block", marginRight: 30 }}>
-              Descrição:
+            <div className="wrap-input-nome">
               <input
-                style={{
-                  border: "solid",
-                  borderWidth: 1,
-                  marginBottom: 20,
-                  width: 600,
-                }}
-                className={"input"}
-                type="text"
-                value={categoria.desc ? categoria.desc : ""}
+                className={
+                  categoria.valor_planejado !== "" ? "has-val input" : "input"
+                }
+                type="desc"
+                value={categoria.desc}
                 onChange={onChange}
                 name="desc"
               />
-            </label>
+              <span className="focus-input" data-placeholder="Descrição"></span>
+            </div>
 
             <select
               value={categoria.tipo}
               onChange={onChange}
               name="tipo"
               disabled={categoria.id ? true : false}
-              style={{ display: "block", marginBottom: 20, fontSize: 16 }}
+              style={{
+                position: "relative",
+                marginBottom: 20,
+                marginLeft: 30,
+                fontSize: 16,
+                top: 70,
+              }}
             >
               <option value="debitos">{categoria.tipo}</option>
               <option value="creditos">creditos</option>
               <option value="contas">contas</option>
             </select>
 
-            <input
-              type="submit"
-              value="Enviar"
-              style={{
-                marginBottom: 30,
-                width: 300,
-                height: 50,
-                fontSize: 20,
-                background: "#ADD8E6",
-              }}
-            />
+            <div className="container-form-btn">
+              <button className="mudancas-form-btn" onClick={handleSubmit}>
+                Criar
+              </button>
+            </div>
           </form>
         </div>
-        <div className="table">
-          <table>
+        <div className="tablecategoria">
+          <table className="table">
             <thead>
               <tr>{collumnsTable()}</tr>
             </thead>

@@ -47,3 +47,40 @@ export const getUserData = async () => {
 export const uptadeUser = async (nome, password, dat_nasc) => {
   return api.put(`/users`, { nome, password, dat_nasc });
 };
+
+export const getCartoes = async () => {
+  return api.get("/cartoes");
+};
+
+export const newDebito = async (id_categoria, valor, desc) => {
+  console.log(id_categoria, valor, desc);
+  valor = Number(valor);
+  return api.post("/debito", { id_categoria, valor, desc });
+};
+
+export const newCredito = async (
+  id_categoria,
+  id_cartao,
+  valor_total,
+  num_parcelas,
+  desc
+) => {
+  valor_total = Number(valor_total);
+  num_parcelas = Number(num_parcelas);
+  return api.post("/credito", {
+    id_categoria,
+    id_cartao,
+    valor_total,
+    num_parcelas,
+    desc,
+  });
+};
+export const newConta = async (id_categoria, valor, dat_vencimento, desc) => {
+  dat_vencimento = dat_vencimento ? dat_vencimento : undefined;
+  valor = Number(valor);
+  return api.post("/contas", { id_categoria, valor, dat_vencimento, desc });
+};
+
+export const categoriasPeriodo = async (dat_prev, dat_pos) => {
+  return api.get("/categorias", { dat_prev, dat_pos });
+};

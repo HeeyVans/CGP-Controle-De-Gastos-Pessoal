@@ -11,6 +11,7 @@ import Ajustes from "./pages/ajustes/ajustes";
 import { AuthContext, AuthProvider } from "./contexts/auth";
 import Cartao from "./pages/cartao/cartao";
 import Categoria from "./pages/categorias/categorias";
+import NovoGasto from "./pages/categorias/novoGasto";
 
 export default function Router() {
   const Private = ({ children }) => {
@@ -37,8 +38,8 @@ export default function Router() {
           <Route
             path="/inicio"
             element={
-             // <Private>
-                <Inicio />
+              // <Private>
+              <Inicio />
               // </Private>
             }
           />
@@ -55,6 +56,14 @@ export default function Router() {
             element={
               <Private>
                 <Categoria />
+              </Private>
+            }
+          />
+          <Route
+            path="/gasto"
+            element={
+              <Private>
+                <NovoGasto />
               </Private>
             }
           />

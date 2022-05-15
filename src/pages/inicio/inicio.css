@@ -186,12 +186,14 @@
 
 .Categorias ul li h2 {
     color:black;
-    font-size: 18px;
+    font-size: 16px;
+    display: inline-block;
 }
 
 .Categorias ul li p {
     color:black;
     font-size: 14px;
+    padding-left: 40px;
 }
 
 li:hover {
@@ -205,6 +207,20 @@ vertical-align: middle;
     width: 19px;
     height: 19px;
 
+}
+
+.newGasto {
+    margin-right: 20px;
+  vertical-align: middle;
+    width: 19px;
+    height: 19px;
+    display: inline-block;
+
+}
+
+.newGasto:hover {
+    width: 23px;
+    height: 23px;
 }
 
 .newCartao {
@@ -221,19 +237,33 @@ table {
     border-style: solid;
     border-width: 2px;
     padding: 5px;
+    width: 100%;
+    border-collapse: collapse;
 }
 
 th {
    padding-bottom: 9px; 
+   padding-top: 9px;
     text-align: center;
+    border : 1px solid;
 }
 
-tr {
-    border-style: solid;
-}
 
 td {
+    padding-top: 9px;
     padding-bottom: 9px;
     padding-right: 15px;
     text-align: center;
+    border : 1px solid;
+}
+
+.formcategoria {
+    grid-column-start: 1;
+    grid-column-end: 2;
+}
+
+.tablecategoria {
+    grid-column-start: 2;
+    grid-column-end: 3;
+    overflow-y: auto;
 }
