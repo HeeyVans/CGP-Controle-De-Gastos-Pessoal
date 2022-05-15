@@ -1,15 +1,95 @@
-import React from "react";
-import NavBar from '../../components/NavBar/NavBar'
+import React, { useState, useEffect } from "react";
+import NavBar from "../../components/NavBar/NavBar";
+import { Chart } from "react-google-charts";
+import "./styles.css";
+import { api, categoriasPeriodo } from "../../services/axios.js";
 
 const Relatorios = () => {
-    return (
-        <div>
-            <NavBar />
-            <div className="container">
-                <h1>Relatorios</h1>
-            </div>
-        </div>
-    );
+  const [data, setData] = useState([
+    ["Categoria", "Gasto"],
+    ["", 0],
+  ]);
+
+  const [input, setInput] = useState({
+    dateprev: "",
+    datapos: "",
+  });
+
+  useEffect(() => {
+    const token = JSON.parse(localStorage.getItem("token"));
+
+    api.defaults.headers.common["authorization"] = `Beers ${token}
+      `;
+  }, []);
+
+  const onclickButton = async () => {
+    console.log(input.datapos, input.dateprev);
+    const { data } = await categoriasPeriodo();
+    const dados = [["Categoria", "Gasto"]];
+
+    const gastosPorCategoria = data.results.map((value, index) => {
+      const soma = value[
+        value.tipo.charAt(0).toUpperCase() + value.tipo.slice(1)
+      ].reduce((soma, i) => {
+        return soma + i.valor;
+      }, 0);
+      dados.push([value.nome, soma]);
+      return dados;
+    });
+    console.log(gastosPorCategoria[0]);
+    setData(gastosPorCategoria[0]);
+  };
+
+  const options = {
+    title: "Gastos Por Categoria No Periodo",
+    chartArea: { width: "43%" },
+    hAxis: {
+      title: "Total de Gasto",
+      minValue: 0,
+    },
+    vAxis: {
+      title: "Categorias",
+    },
+  };
+  const onChange = (event) => {
+    setInput((prevState) => ({
+      ...prevState,
+      [event.target.name]: event.target.value,
+    }));
+  };
+
+  return (
+    <div>
+      <NavBar />
+      <h1>Relatorios</h1>
+      <div style={{ textAlign: "center" }}>
+        <p>Escolha o Periodo a Ser Visualizado</p>
+        <input
+          type={"date"}
+          value={input.dateprev}
+          onChange={onChange}
+          name="dateprev"
+        ></input>
+        <input
+          type={"date"}
+          value={input.datapos}
+          onChange={onChange}
+          name="datapos"
+        ></input>
+        <button onClick={onclickButton}>Enviar</button>
+      </div>
+
+      <div className="container-relatorios">
+        <Chart
+          chartType="BarChart"
+          width="100%"
+          height="400px"
+          data={data}
+          options={options}
+        />
+      </div>
+    </div>
+  );
 };
 
 export default Relatorios;

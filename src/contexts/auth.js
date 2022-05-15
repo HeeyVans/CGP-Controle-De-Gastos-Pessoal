@@ -22,7 +22,6 @@ export const AuthProvider = ({ children }) => {
   const login = async (email, password) => {
     try {
       const response = await doingLogin(email, password);
-      api.defaults.headers.Authorization = `Bearer ${response.data.Token}`;
       localStorage.setItem("token", JSON.stringify(response.data.Token));
       setToken(response.data.Token);
       navigate("/inicio");
@@ -33,7 +32,7 @@ export const AuthProvider = ({ children }) => {
 
   const logout = () => {
     localStorage.removeItem("token");
-    api.defaults.headers.Authorization = null;
+    delete api.defaults.headers.common["authorization"];
     setToken(null);
     navigate("/login");
   };
