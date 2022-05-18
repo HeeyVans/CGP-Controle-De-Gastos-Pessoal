@@ -129,7 +129,7 @@ const Cartao = () => {
                 onChange={onChange}
                 name="nome"
               />
-              <span className="focus-input" data-placeholder="Valor"></span>
+              <span className="focus-input" data-placeholder="Nome"></span>
             </div>
             <div className="wrap-input-nome">
               <input
@@ -155,6 +155,7 @@ const Cartao = () => {
                 value={categoria.valor_atual}
                 onChange={onChange}
                 name="valor_atual"
+                disabled={true}
               />
               <span
                 className="focus-input"

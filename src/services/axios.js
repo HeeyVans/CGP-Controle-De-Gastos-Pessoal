@@ -30,7 +30,6 @@ export const cartãoCreate = async (nome, dat_ven) => {
 export const categoriaCreate = async (nome, valor_planejado, tipo, desc) => {
   desc = desc ? desc : "";
   valor_planejado = Number(valor_planejado);
-  console.log(nome, valor_planejado, tipo, desc);
   return api.post("/categorias", { nome, valor_planejado, tipo, desc });
 };
 
@@ -53,7 +52,6 @@ export const getCartoes = async () => {
 };
 
 export const newDebito = async (id_categoria, valor, desc) => {
-  console.log(id_categoria, valor, desc);
   valor = Number(valor);
   return api.post("/debito", { id_categoria, valor, desc });
 };
@@ -82,5 +80,5 @@ export const newConta = async (id_categoria, valor, dat_vencimento, desc) => {
 };
 
 export const categoriasPeriodo = async (dat_prev, dat_pos) => {
-  return api.get("/categorias", { dat_prev, dat_pos });
+  return api.get(`/categorias/${dat_prev}/${dat_pos}`);
 };

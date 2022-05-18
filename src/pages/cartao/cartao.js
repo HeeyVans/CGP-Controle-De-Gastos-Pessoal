@@ -9,7 +9,7 @@ import moment from "moment";
 const Cartao = () => {
   const [cartao, setcartao] = useState({
     id: "",
-    dat_ven: "",
+    dat_ven: undefined,
     id_user: "",
     nome: "",
     saldo_parcelado: 0,
@@ -37,7 +37,7 @@ const Cartao = () => {
   const handleSubmit = async (event) => {
     try {
       event.preventDefault();
-      if (cartao.id === true) {
+      if (cartao.id) {
         await cartãoUptade(cartao.id, cartao.nome, cartao.dat_ven);
       } else {
         await cartãoCreate(cartao.nome, cartao.dat_ven);

@@ -46,9 +46,8 @@ const NovoGasto = () => {
           gasto.dat_vencimento,
           gasto.desc
         );
-
-        navigate("/inicio");
       }
+      navigate("/inicio");
     } catch (error) {
       console.log(error);
     }

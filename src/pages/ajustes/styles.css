@@ -106,14 +106,14 @@
 
 }
 
-.wrap-input-nome{
+.input-nome{
     position: relative;
     border-bottom: 2px solid #adadad;
     margin-bottom: 35px;
     width: 450px;
     /* height: 14px; */
     left: 30px;
-    top: 170px;
+    top: 180px;
 }
 
 .wrap-input-email{
@@ -266,7 +266,7 @@ button{
     color: rgba(0, 0, 0, 0.5);
 } 
 
-.container-form-btn{
-    margin-top: 300px;
+.container-form{
+    margin-top: 250px;
     margin-left: 170px;
 }

@@ -24,20 +24,24 @@ const Relatorios = () => {
 
   const onclickButton = async () => {
     console.log(input.datapos, input.dateprev);
-    const { data } = await categoriasPeriodo();
+    const { data } = await categoriasPeriodo(input.dateprev, input.datapos);
     const dados = [["Categoria", "Gasto"]];
 
-    const gastosPorCategoria = data.results.map((value, index) => {
-      const soma = value[
-        value.tipo.charAt(0).toUpperCase() + value.tipo.slice(1)
-      ].reduce((soma, i) => {
-        return soma + i.valor;
-      }, 0);
-      dados.push([value.nome, soma]);
-      return dados;
-    });
-    console.log(gastosPorCategoria[0]);
-    setData(gastosPorCategoria[0]);
+    try {
+      const gastosPorCategoria = data.results.map((value, index) => {
+        const soma = value[
+          value.tipo.charAt(0).toUpperCase() + value.tipo.slice(1)
+        ].reduce((soma, i) => {
+          return soma + i.valor;
+        }, 0);
+        dados.push([value.nome, soma]);
+        return dados;
+      });
+
+      setData(gastosPorCategoria[0]);
+    } catch (error) {
+      console.log(error);
+    }
   };
 
   const options = {

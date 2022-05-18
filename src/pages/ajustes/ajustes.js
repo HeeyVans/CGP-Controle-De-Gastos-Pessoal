@@ -1,6 +1,6 @@
 import React from "react";
 import NavBar from "../../components/NavBar/NavBar";
-import "./styles.css";
+import "../ajustes/styles.css";
 import { useState, useEffect } from "react";
 import { api, getUserData, uptadeUser } from "../../services/axios.js";
 import { useNavigate } from "react-router-dom";
@@ -89,7 +89,7 @@ const Ajustes = () => {
         <h3>Dados pessoais:</h3>
 
         <form className="ajustes-form">
-          <div className="wrap-input-nome">
+          <div className="input-nome">
             <input
               className={user.nome !== "" ? "has-val input" : "input"}
               type="nome"
@@ -149,7 +149,7 @@ const Ajustes = () => {
               data-placeholder="Saldo Mensal"
             ></span>
           </div>
-          <div className="container-form-btn">
+          <div className="container-form">
             <button className="mudancas-form-btn" onClick={onClickSave}>
               Salvar Mudanças
             </button>
