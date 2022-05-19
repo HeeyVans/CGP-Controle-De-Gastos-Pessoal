@@ -12,6 +12,8 @@ import { AuthContext, AuthProvider } from "./contexts/auth";
 import Cartao from "./pages/cartao/cartao";
 import Categoria from "./pages/categorias/categorias";
 import NovoGasto from "./pages/categorias/novoGasto";
+import Sobre from "./pages/landing-page/sobre";
+import Contato from "./pages/landing-page/contato";
 
 export default function Router() {
   const Private = ({ children }) => {
@@ -38,9 +40,21 @@ export default function Router() {
           <Route
             path="/inicio"
             element={
-              // <Private>
-              <Inicio />
-              // </Private>
+              <Private>
+                <Inicio />
+              </Private>
+            }
+          />
+          <Route
+            path="/sobre"
+            element={
+              <Sobre />
+            }
+          />
+          <Route
+            path="/contato"
+            element={
+              <Contato />
             }
           />
           <Route
