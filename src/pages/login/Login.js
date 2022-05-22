@@ -15,10 +15,10 @@ function Login() {
   };
   return (
     <div className="container">
-      <span className="img-login">
-        <img src={logoIMG} alt="logotipo"></img>{" "}
-      </span>
       <div className="container-login">
+        <span className="img-login">
+          <img src={logoIMG} alt="logotipo"></img>{" "}
+        </span>
         <div className="wrap-login">
           <form className="login-form">
             <span className="login-form-title">Acesse sua conta </span>

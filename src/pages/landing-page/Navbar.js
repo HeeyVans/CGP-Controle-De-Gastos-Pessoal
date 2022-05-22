@@ -18,7 +18,7 @@ function Navbar() {
 
     return (
         <nav className={nav ? 'nav active' : 'nav'}>
-            <a href='#' className='logo'>
+            <a href='/' className='logo'>
                 <img src={logoIMG} alt='' />
             </a>
             <input type='checkbox' className='menu-btn' id='menu-btn' />
@@ -27,8 +27,8 @@ function Navbar() {
             </label>
             <ul className='menu'>
                 <li><a href='/'>Inicio</a></li>
-                <li><a href='#'>Sobre</a></li>
-                <li><a href='#'>Contato</a></li>
+                <li><a href='/sobre'>Sobre</a></li>
+                <li><a href='/contato'>Contato</a></li>
                 <li><a href='../login'>Login</a></li>
             </ul>
         </nav>

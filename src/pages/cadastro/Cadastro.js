@@ -26,11 +26,13 @@ function Cadastro() {
 
   return (
     <div className="container">
-      <span className="img-cadastro">
-        <img src={logoIMG} alt="logotipo"></img>{" "}
-      </span>
       <div className="container-cadastro">
+        
+        <span className="img-cadastro">
+            <img src={logoIMG} alt="logotipo"></img>{" "}
+        </span>
         <div className="wrap-cadastro">
+        
           <form className="cadastro-form">
             <span className="cadastro-form-title">
               Cadastre-se gratuitamente

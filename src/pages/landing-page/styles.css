@@ -31,17 +31,32 @@ input{
 #main{
 
     width:100%;
-    height:768px;
+    height:auto;
+    margin: 25px 0;
     position: relative;
     background-repeat: no-repeat;
     background-size: cover;
 }
 
+.container-landing-page {
+    display: flex;
+    margin: 0 60px;
+    margin-top: 75px;
+}
+
+.container-landing-page .image{
+    width: 50%;
+}
+
+
+
 .img-inicio{
-    position: absolute;
     width: 100%;
-    margin-left: 1000px;
-    margin-top: 150px;
+}
+
+.container-informacoes {
+    width: 100%;
+    text-align: center;
 
 }
 
@@ -49,7 +64,7 @@ nav{
 	display: flex;
 	justify-content: space-around;
 	align-items: center;
-	position: fixed;
+	/* position: fixed; */
 	left: 0;
 	top: 45px;
 	width:100%;
@@ -120,13 +135,11 @@ nav .menu-btn,
     text-align: center;
 }
 
-.name{
+.container-landing-page .name{
 	font-family: 'Montserrat', sans-serif;
-	width: 500px;
-	position: absolute;
-    left: 22%;
-	top: 50%;
-	transform: translate(-22%,-50%);
+    display: flex;
+    flex-direction: column;
+    width: 50%;
 }
 .name span{
     color: #292930;
