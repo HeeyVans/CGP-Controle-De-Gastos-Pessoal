@@ -1,12 +1,14 @@
 import React from 'react';
-import Navbar from './Navbar'
+import Navbar from './Navbar';
+import "./contato.css";
+import profile from "../../assets/imagens/profile.png"
 
 function Contato() {
     return (
         <div>
             <Navbar />
-            <div>
-                <h1>Testando tela de contato</h1>
+            <div className="container-contato">
+                <h1>Testando</h1>
             </div>
         </div>
     );
