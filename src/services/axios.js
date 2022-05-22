@@ -30,7 +30,6 @@ export const cartãoCreate = async (nome, dat_ven) => {
 export const categoriaCreate = async (nome, valor_planejado, tipo, desc) => {
   desc = desc ? desc : "";
   valor_planejado = Number(valor_planejado);
-  console.log(nome, valor_planejado, tipo, desc);
   return api.post("/categorias", { nome, valor_planejado, tipo, desc });
 };
 
@@ -53,7 +52,6 @@ export const getCartoes = async () => {
 };
 
 export const newDebito = async (id_categoria, valor, desc) => {
-  console.log(id_categoria, valor, desc);
   valor = Number(valor);
   return api.post("/debito", { id_categoria, valor, desc });
 };
@@ -82,5 +80,29 @@ export const newConta = async (id_categoria, valor, dat_vencimento, desc) => {
 };
 
 export const categoriasPeriodo = async (dat_prev, dat_pos) => {
-  return api.get("/categorias", { dat_prev, dat_pos });
+  return api.get(`/categorias/${dat_prev}/${dat_pos}`);
+};
+
+export const removeCartao = async (id) => {
+  return api.delete(`/cartoes/${id}`);
+};
+
+export const removeCategoria = async (id) => {
+  return api.delete(`/categorias/${id}`);
+};
+
+export const removeGasto = async (id, tipo) => {
+  console.log(id, tipo);
+  if (tipo === "debitos") {
+    return await api.delete(`/debito/${id}`);
+  } else if (tipo === "creditos") {
+    return await api.delete(`/credito/${id}`);
+  } else if (tipo === "contas") {
+    return await api.delete(`/contas/${id}`);
+  }
+};
+
+export const uptadeSal = async (saldo_mensal) => {
+  saldo_mensal = Number(saldo_mensal);
+  return api.patch(`/users/saldo_mensal`, { saldo_mensal });
 };

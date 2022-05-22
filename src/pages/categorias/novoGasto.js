@@ -26,13 +26,13 @@ const NovoGasto = () => {
   const location = useLocation();
   const navigate = useNavigate();
 
-  const handleSubmit = (event) => {
+  const handleSubmit = async (event) => {
     event.preventDefault();
     try {
       if (gasto.tipo === "debitos") {
-        newDebito(gasto.id_categoria, gasto.valor, gasto.desc);
+        await newDebito(gasto.id_categoria, gasto.valor, gasto.desc);
       } else if (gasto.tipo === "creditos") {
-        newCredito(
+        await newCredito(
           gasto.id_categoria,
           gasto.id_cartao,
           gasto.valor,
@@ -40,17 +40,19 @@ const NovoGasto = () => {
           gasto.desc
         );
       } else if (gasto.tipo === "contas") {
-        newConta(
+        await newConta(
           gasto.id_categoria,
           gasto.valor,
           gasto.dat_vencimento,
           gasto.desc
         );
-
-        navigate("/inicio");
       }
+      alert("Gasto Cadastrado Com Sucesso");
+      navigate("/inicio");
     } catch (error) {
-      console.log(error);
+      alert(
+        `Erro : ${error.response.data.Error}\nMessagem : ${error.response.data.Messagem}`
+      );
     }
   };
 
@@ -82,7 +84,9 @@ const NovoGasto = () => {
           tipo: location.state.categoria.tipo,
         }));
       } catch (error) {
-        console.log(error);
+        alert(
+          `Erro : ${error.response.data.Error}\nMessagem : ${error.response.data.Messagem}`
+        );
       }
     })();
   }, []);
@@ -179,7 +183,7 @@ const NovoGasto = () => {
 
           <div className="container-form-btn">
             <button className="mudancas-form-btn" onClick={handleSubmit}>
-              Criar
+              {!!gasto.id_categoria ? "Atualizar" : "Cadastrar"}
             </button>
           </div>
         </form>

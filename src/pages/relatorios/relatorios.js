@@ -23,21 +23,26 @@ const Relatorios = () => {
   }, []);
 
   const onclickButton = async () => {
-    console.log(input.datapos, input.dateprev);
-    const { data } = await categoriasPeriodo();
     const dados = [["Categoria", "Gasto"]];
 
-    const gastosPorCategoria = data.results.map((value, index) => {
-      const soma = value[
-        value.tipo.charAt(0).toUpperCase() + value.tipo.slice(1)
-      ].reduce((soma, i) => {
-        return soma + i.valor;
-      }, 0);
-      dados.push([value.nome, soma]);
-      return dados;
-    });
-    console.log(gastosPorCategoria[0]);
-    setData(gastosPorCategoria[0]);
+    try {
+      const { data } = await categoriasPeriodo(input.dateprev, input.datapos);
+      const gastosPorCategoria = data.results.map((value, index) => {
+        const soma = value[
+          value.tipo.charAt(0).toUpperCase() + value.tipo.slice(1)
+        ].reduce((soma, i) => {
+          return soma + i.valor;
+        }, 0);
+        dados.push([value.nome, soma]);
+        return dados;
+      });
+
+      setData(gastosPorCategoria[0]);
+    } catch (error) {
+      alert(
+        `Erro : ${error.response.data.Error}\nMessagem : ${error.response.data.Messagem}`
+      );
+    }
   };
 
   const options = {
@@ -76,7 +81,7 @@ const Relatorios = () => {
           onChange={onChange}
           name="datapos"
         ></input>
-        <button onClick={onclickButton}>Enviar</button>
+        <button onClick={onclickButton}>Buscar</button>
       </div>
 
       <div className="container-relatorios">

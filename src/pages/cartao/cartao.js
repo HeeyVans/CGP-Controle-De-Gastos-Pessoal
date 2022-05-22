@@ -1,7 +1,12 @@
 import React, { useState, useEffect } from "react";
 import NavBar from "../../components/NavBar/NavBar";
 import { useNavigate, useLocation } from "react-router-dom";
-import { api, cartãoUptade, cartãoCreate } from "../../services/axios.js";
+import {
+  api,
+  cartãoUptade,
+  cartãoCreate,
+  removeCartao,
+} from "../../services/axios.js";
 import "../inicio/inicio.css";
 import "../cartao/styles.css";
 import moment from "moment";
@@ -9,7 +14,7 @@ import moment from "moment";
 const Cartao = () => {
   const [cartao, setcartao] = useState({
     id: "",
-    dat_ven: "",
+    dat_ven: undefined,
     id_user: "",
     nome: "",
     saldo_parcelado: 0,
@@ -34,17 +39,26 @@ const Cartao = () => {
     }
   }, []);
 
-  const handleSubmit = async (event) => {
+  const handleSubmit = async (event, remover) => {
     try {
       event.preventDefault();
-      if (cartao.id === true) {
-        await cartãoUptade(cartao.id, cartao.nome, cartao.dat_ven);
+      if (remover === false) {
+        if (cartao.id) {
+          await cartãoUptade(cartao.id, cartao.nome, cartao.dat_ven);
+        } else {
+          await cartãoCreate(cartao.nome, cartao.dat_ven);
+        }
+        alert(!!cartao.id ? "Atualização Realizada" : "Cadastro Realizado");
+        navigate("/inicio");
       } else {
-        await cartãoCreate(cartao.nome, cartao.dat_ven);
+        await removeCartao(cartao.id);
+        alert("Cartão Removido Com Sucesso");
+        navigate("/inicio");
       }
-      navigate("/inicio");
     } catch (error) {
-      alert(error);
+      alert(
+        `Erro : ${error.response.data.Error}\nMessagem : ${error.response.data.Messagem}`
+      );
     }
   };
   const onChange = (event) => {
@@ -103,8 +117,19 @@ const Cartao = () => {
           </div>
 
           <div className="container-form-btn">
-            <button className="mudancas-form-btn" onClick={handleSubmit}>
-              Criar
+            <button
+              className="mudancas-form-btn"
+              onClick={(event) => handleSubmit(event, false)}
+            >
+              {!!cartao.id ? "Atualizar" : "Cadastrar"}
+            </button>
+            <button
+              className="cancelar-form-btn"
+              style={{ marginTop: 10 }}
+              onClick={(event) => handleSubmit(event, true)}
+              disabled={cartao.id ? false : true}
+            >
+              Remover Cartão
             </button>
           </div>
         </form>

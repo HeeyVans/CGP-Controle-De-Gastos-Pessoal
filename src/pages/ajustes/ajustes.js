@@ -1,8 +1,13 @@
 import React from "react";
 import NavBar from "../../components/NavBar/NavBar";
-import "../../pages/ajustes/ajustes.css";
+import "../ajustes/styles.css";
 import { useState, useEffect } from "react";
-import { api, getUserData, uptadeUser } from "../../services/axios.js";
+import {
+  api,
+  getUserData,
+  uptadeUser,
+  uptadeSal,
+} from "../../services/axios.js";
 import { useNavigate } from "react-router-dom";
 import moment from "moment";
 
@@ -50,19 +55,19 @@ const Ajustes = () => {
     try {
       event.preventDefault();
       await uptadeUser(user.nome, user.password, user.dat_nasc);
+      await uptadeSal(user.saldo_mensal);
+      alert("Dados Atualizados Com Sucesso");
       navigate("/inicio");
     } catch (error) {
-      alert(error);
+      alert(
+        `Erro : ${error.response.data.Error}\nMessagem : ${error.response.data.Messagem}`
+      );
     }
   };
 
   const onClickCancel = async (event) => {
-    try {
-      event.preventDefault();
-      navigate("/inicio");
-    } catch (error) {
-      alert(error);
-    }
+    event.preventDefault();
+    navigate("/inicio");
   };
 
   return (
@@ -89,7 +94,7 @@ const Ajustes = () => {
         <h3>Dados pessoais:</h3>
 
         <form className="ajustes-form">
-          <div className="wrap-input-nome">
+          <div className="input-nome">
             <input
               className={user.nome !== "" ? "has-val input" : "input"}
               type="nome"
@@ -149,7 +154,7 @@ const Ajustes = () => {
               data-placeholder="Saldo Mensal"
             ></span>
           </div>
-          <div className="container-form-btn">
+          <div className="container-form">
             <button className="mudancas-form-btn" onClick={onClickSave}>
               Salvar Mudanças
             </button>

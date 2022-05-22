@@ -28,8 +28,10 @@ const Inicio = () => {
       try {
         const response = await getUser();
         localStorage.setItem("UserData", JSON.stringify(response.data));
-      } catch (err) {
-        console.log(err);
+      } catch (error) {
+        alert(
+          `Erro : ${error.response.data.Error}\nMessagem : ${error.response.data.Messagem}`
+        );
       } finally {
         const data = JSON.parse(localStorage.getItem("UserData"));
         if (data) {
@@ -96,7 +98,7 @@ const Inicio = () => {
         </div>
         <div className="DespesaMensal">
           <h2>Despesa Mensal</h2>
-          <p>R$ {userData.saldo_mensal - userData.saldo_resto}</p>
+          <p>R$ {-userData.saldo_resto}</p>
         </div>
         <div className="SaldoResto">
           <h2>Gasto Total</h2>
