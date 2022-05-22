@@ -82,6 +82,25 @@ const Categoria = () => {
     try {
       console.log(id, categoria.tipo);
       await removeGasto(id, categoria.tipo);
+
+      const newDebitos = categoria.Debitos.filter((gasto) => {
+        return gasto.id !== id;
+      });
+      const newContas = categoria.Contas.filter((gasto) => {
+        return gasto.id !== id;
+      });
+      const newCreditos = categoria.Creditos.filter((gasto) => {
+        return gasto.id !== id;
+      });
+
+      const categoriaAux = {
+        ...categoria,
+        Debitos: newDebitos,
+        Contas: newContas,
+        Creditos: newCreditos,
+      };
+
+      setCategoria(categoriaAux);
       alert("Gasto Removido");
     } catch (error) {
       alert(

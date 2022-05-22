@@ -1,6 +1,6 @@
 import React from "react";
 import NavBar from "../../components/NavBar/NavBar";
-import "../ajustes/styles.css";
+import "./ajustes.css";
 import { useState, useEffect } from "react";
 import {
   api,

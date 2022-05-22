@@ -27,12 +27,10 @@ function Cadastro() {
   return (
     <div className="container">
       <div className="container-cadastro">
-        
         <span className="img-cadastro">
-            <img src={logoIMG} alt="logotipo"></img>{" "}
+          <img src={logoIMG} alt="logotipo"></img>{" "}
         </span>
         <div className="wrap-cadastro">
-        
           <form className="cadastro-form">
             <span className="cadastro-form-title">
               Cadastre-se gratuitamente
@@ -71,7 +69,7 @@ function Cadastro() {
             <div className="wrap-input">
               <input
                 className={senha !== "" ? "has-val input" : "input"}
-                type="senha"
+                type="password"
                 value={senha}
                 onChange={(e) => setSenha(e.target.value)}
               />

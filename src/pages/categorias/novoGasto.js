@@ -101,6 +101,7 @@ const NovoGasto = () => {
   return (
     <div>
       <NavBar />
+
       <div className="container-gasto" style={{ padding: 30 }}>
         <h2>Seu Gasto</h2>
         <form onSubmit={handleSubmit} className="ajustes-form">
@@ -183,7 +184,7 @@ const NovoGasto = () => {
 
           <div className="container-form-btn">
             <button className="mudancas-form-btn" onClick={handleSubmit}>
-              {!!gasto.id_categoria ? "Atualizar" : "Cadastrar"}
+              Cadastrar
             </button>
           </div>
         </form>

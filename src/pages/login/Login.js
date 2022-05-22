@@ -36,7 +36,7 @@ function Login() {
             <div className="wrap-input">
               <input
                 className={senha !== "" ? "has-val input" : "input"}
-                type="senha"
+                type="password"
                 value={senha}
                 onChange={(e) => setSenha(e.target.value)}
               />

@@ -30,7 +30,7 @@ const Inicio = () => {
         localStorage.setItem("UserData", JSON.stringify(response.data));
       } catch (error) {
         alert(
-          `Erro : ${error.response.data.Error}\nMessagem : ${error.response.data.Messagem}`
+          `Erro : ${error.response?.data.Error}\nMessagem : ${error.response?.data.Messagem}`
         );
       } finally {
         const data = JSON.parse(localStorage.getItem("UserData"));
