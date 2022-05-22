@@ -1,10 +1,16 @@
 import React, { useState, useEffect } from "react";
 import NavBar from "../../components/NavBar/NavBar";
 import { useNavigate, useLocation } from "react-router-dom";
-import { api, categoriaCreate, categoriaUptade } from "../../services/axios.js";
+import {
+  api,
+  categoriaCreate,
+  categoriaUptade,
+  removeCategoria,
+  removeGasto,
+} from "../../services/axios.js";
 import "../inicio/inicio.css";
 
-const Cartao = () => {
+const Categoria = () => {
   const [categoria, setCategoria] = useState({
     id: "",
     nome: "",
@@ -27,31 +33,41 @@ const Cartao = () => {
     api.defaults.headers.common["authorization"] = `Beers ${token}
       `;
     if (location.state?.hasOwnProperty("categoria")) {
+      console.log(location.state.categoria);
       setCategoria(location.state.categoria);
     }
   }, []);
 
-  const handleSubmit = async (event) => {
+  const handleSubmit = async (event, remover) => {
     try {
       event.preventDefault();
-      if (!!categoria.id === true) {
-        await categoriaUptade(
-          categoria.id,
-          categoria.nome,
-          categoria.valor_planejado,
-          categoria.desc
-        );
-      } else {
-        await categoriaCreate(
-          categoria.nome,
-          categoria.valor_planejado,
-          categoria.tipo,
-          categoria.desc
-        );
+      if (remover === false) {
+        if (!!categoria.id === true) {
+          await categoriaUptade(
+            categoria.id,
+            categoria.nome,
+            categoria.valor_planejado,
+            categoria.desc
+          );
+        } else {
+          console.log(categoria);
+          await categoriaCreate(
+            categoria.nome,
+            categoria.valor_planejado,
+            categoria.tipo,
+            categoria.desc
+          );
+        }
+      } else if (remover === true) {
+        await removeCategoria(categoria.id);
+        alert("Categoria Removida");
       }
     } catch (error) {
-      alert(error);
+      alert(
+        `Erro : ${error.response.data.Error}\nMessagem : ${error.response.data.Messagem}`
+      );
     } finally {
+      alert(!!categoria.id ? "Atualizado Com Sucesso" : "Criado Com Sucesso");
       navigate("/inicio");
     }
   };
@@ -60,6 +76,18 @@ const Cartao = () => {
       ...prevState,
       [event.target.name]: event.target.value,
     }));
+  };
+
+  const removeGastos = async (id) => {
+    try {
+      console.log(id, categoria.tipo);
+      await removeGasto(id, categoria.tipo);
+      alert("Gasto Removido");
+    } catch (error) {
+      alert(
+        `Erro : ${error.response.data.Error}\nMessagem : ${error.response.data.Messagem}`
+      );
+    }
   };
 
   const collumnsTable = () => {
@@ -78,7 +106,7 @@ const Cartao = () => {
         (value) =>
           value !== "id_categoria" && value !== "id" && value !== "id_cartao"
       );
-
+      chavesFiltradas.push("Ação");
       return chavesFiltradas.map((value, index) => {
         return <th key={index}>{value}</th>;
       });
@@ -105,6 +133,14 @@ const Cartao = () => {
             {collumnsFiltradas.map((valor, index) => {
               return <td key={index}>{value[valor]}</td>;
             })}
+            <td>
+              <button
+                className="cancelar-form-btn"
+                onClick={() => removeGastos(value.id)}
+              >
+                Remover
+              </button>
+            </td>
           </tr>
         );
       });
@@ -115,7 +151,6 @@ const Cartao = () => {
   return (
     <div>
       <NavBar />
-
       <h1>Categoria : {categoria.nome}</h1>
       <p></p>
       <div className="container-categoria" style={{ padding: 30 }}>
@@ -195,8 +230,19 @@ const Cartao = () => {
             </select>
 
             <div className="container-form-btn">
-              <button className="mudancas-form-btn" onClick={handleSubmit}>
-                Criar
+              <button
+                className="mudancas-form-btn"
+                onClick={(event) => handleSubmit(event, false)}
+              >
+                {!!categoria.id ? "Atualizar" : "Cadastrar"}
+              </button>
+              <button
+                className="cancelar-form-btn"
+                style={{ marginTop: 10 }}
+                onClick={(event) => handleSubmit(event, true)}
+                disabled={categoria.id ? false : true}
+              >
+                Remover Categoria
               </button>
             </div>
           </form>
@@ -214,4 +260,4 @@ const Cartao = () => {
   );
 };
 
-export default Cartao;
+export default Categoria;

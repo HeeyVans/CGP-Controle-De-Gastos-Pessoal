@@ -259,12 +259,21 @@ button{
 .mudancas-form-btn{
     background: #3DD990;
     color: rgba(0, 0, 0, 0.5);
+    
+}
+
+.mudancas-form-btn:hover{
+    background: #2b9765;
 }
 
 .cancelar-form-btn{
     background: #FA6868;
     color: rgba(0, 0, 0, 0.5);
 } 
+
+.cancelar-form-btn:hover {
+    background : #8f5b5b;
+}
 
 .container-form{
     margin-top: 250px;

@@ -23,11 +23,10 @@ const Relatorios = () => {
   }, []);
 
   const onclickButton = async () => {
-    console.log(input.datapos, input.dateprev);
-    const { data } = await categoriasPeriodo(input.dateprev, input.datapos);
     const dados = [["Categoria", "Gasto"]];
 
     try {
+      const { data } = await categoriasPeriodo(input.dateprev, input.datapos);
       const gastosPorCategoria = data.results.map((value, index) => {
         const soma = value[
           value.tipo.charAt(0).toUpperCase() + value.tipo.slice(1)
@@ -40,7 +39,9 @@ const Relatorios = () => {
 
       setData(gastosPorCategoria[0]);
     } catch (error) {
-      console.log(error);
+      alert(
+        `Erro : ${error.response.data.Error}\nMessagem : ${error.response.data.Messagem}`
+      );
     }
   };
 
@@ -80,7 +81,7 @@ const Relatorios = () => {
           onChange={onChange}
           name="datapos"
         ></input>
-        <button onClick={onclickButton}>Enviar</button>
+        <button onClick={onclickButton}>Buscar</button>
       </div>
 
       <div className="container-relatorios">
