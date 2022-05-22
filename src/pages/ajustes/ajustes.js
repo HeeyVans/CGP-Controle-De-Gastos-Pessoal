@@ -1,10 +1,6 @@
 import React from "react";
 import NavBar from "../../components/NavBar/NavBar";
-<<<<<<< HEAD
 import "../ajustes/styles.css";
-=======
-import "../../pages/ajustes/ajustes.css";
->>>>>>> febaa020970a01376d4281e26b679121dabae4b8
 import { useState, useEffect } from "react";
 import {
   api,
