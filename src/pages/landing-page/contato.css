@@ -10,11 +10,58 @@ body {
 }
 
 .container-contato {
+    max-width: 1200px;
+    width: 90%;
+    margin: 0px auto;;
+    text-align: center;
+}
+
+.container-contato p {
+    font-size: 12px;
+}
+
+.container-contato h2 {
+    font-size: 20px;
+    margin-top: 0.5rem;
+    text-transform: uppercase;
+}
+
+.container-contato .center {
+    width: 100%;
+    max-width: 500px;
+}
+
+.container-contato .center .card {
+    padding: 2rem;
+    background-color:rgb(222, 250, 199);
     display: flex;
-    flex-direction: column;
     -webkit-box-align: center;
     align-items: center;
-    max-width: 1224px;
-    padding: 0px 16px;
-    width: 100%;
+    gap: 2rem;
+    border-radius: 8px;
+    margin-bottom: 2rem;
+}
+
+.center .icon {
+    color: white;
+    background-color: #3DD990;
+    padding: 30px;
+    display: flex;
+    -webkit-box-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    justify-content: center;
+    border-radius: 50%;
+}
+
+.center img {
+    width: 3.5rem;
+}
+
+.center .infos {
+    max-width: 500px;
+    margin: 0px auto;
+    font-size: 1.8rem;
+    line-height: 1.3em;
+    color: #3DD990;
 }

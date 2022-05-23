@@ -1,14 +1,45 @@
 import React from 'react';
 import Navbar from './Navbar';
 import "./contato.css";
-import profile from "../../assets/imagens/profile.png"
+import iconTelefone from "../../assets/imagens/icon-telefone.png";
+import iconMail from "../../assets/imagens/icon-mail.png";
+import iconLocal from "../../assets/imagens/icon-local.png";
 
 function Contato() {
     return (
         <div>
             <Navbar />
             <div className="container-contato">
-                <h1>Testando</h1>
+                <div>
+                    {/* <p>Entre em</p> */}
+                    <h2>Entre em Contato</h2>
+                </div>
+                <div className="center">
+                    <div className="card">
+                        <div className="icon">
+                            <img src={iconTelefone} alt="icone de telefone" />
+                        </div>
+                        <div className="infos">
+                            <p>(81) 9 4002-8922</p>
+                        </div>
+                    </div>
+                    <div className="card">
+                        <div className="icon">
+                            <img src={iconMail} alt="icone de telefone" />
+                        </div>
+                        <div className="infos">
+                            <p>controledegastospessoal@gcp.com</p>
+                        </div>
+                    </div>
+                    <div className="card">
+                        <div className="icon">
+                            <img src={iconLocal} alt="icone de telefone" />
+                        </div>
+                        <div className="infos">
+                            <p>Recife, PE</p>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     );
