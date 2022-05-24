@@ -1,0 +1,71 @@
+.body_c {
+    font-size: 1rem;
+    font-style: normal;
+    font-weight: 400;
+    background-color: rgb(255, 255, 255);
+    font-family: Metropolis;
+    padding: 0px;
+    margin: 0px;
+    margin: 25px 0;
+}
+
+.container-contato {
+    max-width: 1200px;
+    width: 90%;
+    margin: 0px auto;;
+    text-align: center;
+}
+
+.container-contato p {
+    font-size: 18px;
+}
+
+.container-contato h2 {
+    font-size: 20px;
+    margin-top: 2rem;
+    margin-bottom: 3rem;
+    text-transform: uppercase;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.container-contato .center {
+    width: 100%;
+    justify-content: space-between;
+    display: flex;
+}
+
+.container-contato .center .card {
+    padding: 2rem;
+    background-color: rgb(222, 250, 199);
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    border-radius: 8px;
+    margin-bottom: 2rem;
+    width: 350px;
+    flex-direction: column;
+}
+
+.center .icon {
+    color: white;
+    background-color: #3DD990;
+    padding: 30px;
+    display: flex;
+    -webkit-box-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    justify-content: center;
+    border-radius: 50%;
+}
+
+.center img {
+    width: 3.5rem;
+}
+
+.center .infos {
+    max-width: 500px;
+    margin: 0px auto;
+    font-size: 1.8rem;
+    line-height: 1.3em;
+    color: #3DD990;
+}
