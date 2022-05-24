@@ -20,7 +20,7 @@ function Contato() {
                             <img src={iconTelefone} alt="icone de telefone" />
                         </div>
                         <div className="infos">
-                            <p>(81) 9 4002-8922</p>
+                            <p>(81) 4002-8922</p>
                         </div>
                     </div>
                     <div className="card">
@@ -28,7 +28,7 @@ function Contato() {
                             <img src={iconMail} alt="icone de telefone" />
                         </div>
                         <div className="infos">
-                            <p>controledegastospessoal@gcp.com</p>
+                            <p>controledegastospessoal@cgp.com</p>
                         </div>
                     </div>
                     <div className="card">
@@ -36,7 +36,7 @@ function Contato() {
                             <img src={iconLocal} alt="icone de telefone" />
                         </div>
                         <div className="infos">
-                            <p>Recife, PE</p>
+                            <p>Dois Irmãos - Recife, PE</p>
                         </div>
                     </div>
                 </div>

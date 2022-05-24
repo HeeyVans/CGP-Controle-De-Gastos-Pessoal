@@ -17,29 +17,33 @@ body {
 }
 
 .container-contato p {
-    font-size: 12px;
+    font-size: 18px;
 }
 
 .container-contato h2 {
     font-size: 20px;
-    margin-top: 0.5rem;
+    margin-top: 2rem;
+    margin-bottom: 3rem;
     text-transform: uppercase;
+    font-family: 'Montserrat', sans-serif;
 }
 
 .container-contato .center {
     width: 100%;
-    max-width: 500px;
+    justify-content: space-between;
+    display: flex;
 }
 
 .container-contato .center .card {
     padding: 2rem;
-    background-color:rgb(222, 250, 199);
+    background-color: rgb(222, 250, 199);
     display: flex;
-    -webkit-box-align: center;
     align-items: center;
     gap: 2rem;
     border-radius: 8px;
     margin-bottom: 2rem;
+    width: 350px;
+    flex-direction: column;
 }
 
 .center .icon {
