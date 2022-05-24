@@ -1,7 +1,8 @@
 import React from "react";
 import NavBar from "../../components/NavBar/NavBar";
 import "./ajustes.css";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useContext } from "react";
+import { AuthContext } from "../../contexts/auth.js";
 import {
   api,
   getUserData,
@@ -23,6 +24,7 @@ const Ajustes = () => {
   };
 
   const [user, setUser] = useState(inicitalState);
+  const { logout } = useContext(AuthContext);
 
   useEffect(() => {
     (async () => {
@@ -83,7 +85,7 @@ const Ajustes = () => {
             <h2>Conta</h2>
           </li>
 
-          <li className="op-sair">
+          <li className="op-sair" onClick={logout}>
             <h2>Sair</h2>
           </li>
         </ul>
