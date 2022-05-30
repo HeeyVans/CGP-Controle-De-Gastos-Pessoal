@@ -2,6 +2,7 @@ import { useState, useContext } from "react";
 import logoIMG from "../../assets/Logo Outline.png";
 import "./styles.css";
 import { AuthContext } from "../../contexts/auth.js";
+import { useNavigate } from "react-router-dom";
 
 function Login() {
   const [email, setEmail] = useState("");
@@ -9,6 +10,7 @@ function Login() {
 
   const { login } = useContext(AuthContext);
 
+  const navigate = useNavigate();
   const handleSubmit = (e) => {
     e.preventDefault();
     login(email, senha);
@@ -17,7 +19,7 @@ function Login() {
     <div className="container">
       <div className="container-login">
         <span className="img-login">
-          <img src={logoIMG} alt="logotipo"></img>{" "}
+          <img src={logoIMG} alt="logotipo" onClick={() => navigate("/")}></img>{" "}
         </span>
         <div className="wrap-login">
           <form className="login-form">

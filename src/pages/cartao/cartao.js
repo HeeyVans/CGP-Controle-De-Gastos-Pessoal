@@ -51,9 +51,14 @@ const Cartao = () => {
         alert(!!cartao.id ? "Atualização Realizada" : "Cadastro Realizado");
         navigate("/inicio");
       } else {
-        await removeCartao(cartao.id);
-        alert("Cartão Removido Com Sucesso");
-        navigate("/inicio");
+        const confirm = window.confirm(
+          "Tem Certeza Que Deseja Remvoer Cartão?"
+        );
+        if (confirm) {
+          await removeCartao(cartao.id);
+          alert("Cartão Removido Com Sucesso");
+          navigate("/inicio");
+        }
       }
     } catch (error) {
       alert(

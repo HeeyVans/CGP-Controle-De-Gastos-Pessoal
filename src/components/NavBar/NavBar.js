@@ -6,8 +6,6 @@ import logo from "../../assets/imagens/logo-Outline.png";
 import btnInicio from "../../assets/imagens/btnInicio.png";
 import btnRelatorios from "../../assets/imagens/btnRelatorios.png";
 import btnAjustes from "../../assets/imagens/btnAjustes.png";
-import btnNotificacoes from "../../assets/imagens/btnNotificacoes.png";
-import btnPerfil from "../../assets/imagens/btnPerfil.png";
 
 //Estilos
 import "./NavBar.css";

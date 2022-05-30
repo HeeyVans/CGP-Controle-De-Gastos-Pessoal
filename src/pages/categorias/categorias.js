@@ -49,6 +49,8 @@ const Categoria = () => {
             categoria.valor_planejado,
             categoria.desc
           );
+          alert("Atualizado Com Sucesso");
+          navigate("/inicio");
         } else {
           console.log(categoria);
           await categoriaCreate(
@@ -57,18 +59,21 @@ const Categoria = () => {
             categoria.tipo,
             categoria.desc
           );
+          alert("Criado Com Sucesso");
+          navigate("/inicio");
         }
       } else if (remover === true) {
-        await removeCategoria(categoria.id);
-        alert("Categoria Removida");
+        const confirmar = window.confirm("Tem Certeza que Deseja Excluir");
+        if (confirmar) {
+          await removeCategoria(categoria.id);
+          alert("Categoria Removida");
+          navigate("/inicio");
+        }
       }
     } catch (error) {
       alert(
         `Erro : ${error.response.data.Error}\nMessagem : ${error.response.data.Messagem}`
       );
-    } finally {
-      alert(!!categoria.id ? "Atualizado Com Sucesso" : "Criado Com Sucesso");
-      navigate("/inicio");
     }
   };
   const onChange = (event) => {
@@ -80,28 +85,32 @@ const Categoria = () => {
 
   const removeGastos = async (id) => {
     try {
-      console.log(id, categoria.tipo);
-      await removeGasto(id, categoria.tipo);
+      const confirmar = window.confirm(
+        "Tem Certeza que Deseja Remover o Gasto?"
+      );
+      if (confirmar) {
+        await removeGasto(id, categoria.tipo);
 
-      const newDebitos = categoria.Debitos.filter((gasto) => {
-        return gasto.id !== id;
-      });
-      const newContas = categoria.Contas.filter((gasto) => {
-        return gasto.id !== id;
-      });
-      const newCreditos = categoria.Creditos.filter((gasto) => {
-        return gasto.id !== id;
-      });
+        const newDebitos = categoria.Debitos.filter((gasto) => {
+          return gasto.id !== id;
+        });
+        const newContas = categoria.Contas.filter((gasto) => {
+          return gasto.id !== id;
+        });
+        const newCreditos = categoria.Creditos.filter((gasto) => {
+          return gasto.id !== id;
+        });
 
-      const categoriaAux = {
-        ...categoria,
-        Debitos: newDebitos,
-        Contas: newContas,
-        Creditos: newCreditos,
-      };
+        const categoriaAux = {
+          ...categoria,
+          Debitos: newDebitos,
+          Contas: newContas,
+          Creditos: newCreditos,
+        };
 
-      setCategoria(categoriaAux);
-      alert("Gasto Removido");
+        setCategoria(categoriaAux);
+        alert("Gasto Removido");
+      }
     } catch (error) {
       alert(
         `Erro : ${error.response.data.Error}\nMessagem : ${error.response.data.Messagem}`

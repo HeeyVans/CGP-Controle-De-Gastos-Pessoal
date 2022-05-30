@@ -28,7 +28,7 @@ function Cadastro() {
     <div className="container">
       <div className="container-cadastro">
         <span className="img-cadastro">
-          <img src={logoIMG} alt="logotipo"></img>{" "}
+          <img src={logoIMG} alt="logotipo" onClick={() => navigate("/")}></img>{" "}
         </span>
         <div className="wrap-cadastro">
           <form className="cadastro-form">
